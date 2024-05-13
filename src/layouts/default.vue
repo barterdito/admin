@@ -1,13 +1,14 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
   <v-app>
+    <SideNav />
     <v-main>
-      <v-container fluid style="background-color: #fafafa;">
-        <router-view />
-      </v-container>
+      <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script setup>
-  //
+import SideNav from './SideNav.vue';
+
 </script>

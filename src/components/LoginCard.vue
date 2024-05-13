@@ -1,3 +1,4 @@
+
 <template>
     <v-row style="height: 100vh;">
         <v-card class="pa-4 mx-auto my-auto" width="344">
@@ -15,11 +16,14 @@
                 ></v-text-field>
 
                 <v-text-field
+                    :append-icon="showPass ? 'mdi-eye' : 'mdi-eye-off'"
+                    :type="showPass ? 'text': 'password'"
                     label="Password"
                     placeholder="Enter your password"
                     variant="outlined"
                     hide-details
                     color="primary"
+                    @click:append="showPass = !showPass"
                 ></v-text-field>
 
                 <br>
@@ -31,6 +35,7 @@
                     variant="flat"
                     class="text-none"
                     block
+                    to="/dashboard"
                 >
                 Log In
                 </v-btn>
@@ -56,9 +61,13 @@
 </template>
 
 <script setup>
-  import { useDisplay } from 'vuetify'
+import { ref } from 'vue';
 
-  const { smAndUp, mdAndUp } = useDisplay()
+import { useDisplay } from 'vuetify'
 
-  const form = ref(null)
+// eslint-disable-next-line no-unused-vars
+const { smAndUp, mdAndUp } = useDisplay()
+
+const form = ref(null)
+const showPass = ref(false)
 </script>
