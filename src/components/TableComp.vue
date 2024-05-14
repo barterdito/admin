@@ -4,7 +4,7 @@
     :headers="headers"
     :items="serverItems"
     items-per-page="5"
-    max-height="300"
+    max-height="200"
     >
     </v-data-table>
 

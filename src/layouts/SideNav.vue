@@ -2,6 +2,7 @@
     <v-navigation-drawer
         class="bg-deep-purple"
         theme="dark"
+        location="left"
         permanent
     >
         <v-list color="transparent">
