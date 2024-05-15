@@ -1,12 +1,11 @@
+<!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <v-app>
-    <v-layout>
-      <SideNav />
-      <v-main>
-        <router-view />
-      </v-main>
-    </v-layout>
-  </v-app>
+  <v-layout>
+    <SideNav />
+    <v-main>
+      <router-view />
+    </v-main>
+  </v-layout>
 </template>
 
 <script setup>
