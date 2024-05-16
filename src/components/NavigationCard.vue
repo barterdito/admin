@@ -25,10 +25,12 @@
       >
         <v-list>
           <v-list-item
-          v-for="(item,i) in itemsNav"
-          :key="i"
-          :title="item.title"
-          :to="item.route"
+          v-for="([title,route,icon]) in itemsNav"
+          :key="title"
+          :title="title"
+          :value="title"
+          :prepend-icon="icon"
+          :to="route"
           >
 
           </v-list-item>
@@ -39,16 +41,11 @@
 <script setup>
 
 const drawer = ref(false)
-const itemsNav = ref([
-        {
-          title: 'Dashboard',
-          route: '/dashboard',
-        },
-        {
-          title: 'Reports',
-          route: '/reports',
-        },
-      ],
-    )
+const itemsNav = [
+  ['Dashboard','dashboard','mdi-view-dashboard'],
+  ['Users','users','mdi-account-group'],
+  ['Post','post','mdi-post'],
+  ['Reports','reports','mdi-chart-box']
+]
 
 </script>

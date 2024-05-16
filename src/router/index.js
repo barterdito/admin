@@ -13,10 +13,20 @@ const routes = [
         component:()=>import('@/pages/dashboard/')
       },
       {
+        path:'/users',
+        name:'users',
+        component:()=>import('@/pages/users/')
+      },
+      {
+        path:'/post',
+        name:'post',
+        component:()=>import('@/pages/post/')
+      },
+      {
         path:'/reports',
         name:'reports',
         component:()=>import('@/pages/reports/')
-      }
+      },
     ]
   },
 ]
