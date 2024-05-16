@@ -27,10 +27,11 @@
                 <v-btn
                     color="primary"
                     size="large"
-                    type="submit"
+                    type="button"
                     variant="flat"
                     class="text-none"
                     block
+                    @click="submitLogin"
                 >
                 Log In
                 </v-btn>
@@ -56,9 +57,18 @@
 </template>
 
 <script setup>
-  import { useDisplay } from 'vuetify'
+import { useDisplay } from 'vuetify'
+import {useRoute} from 'vue-router'
 
-  const { smAndUp, mdAndUp } = useDisplay()
+const router = useRoute()
 
-  const form = ref(null)
+// eslint-disable-next-line no-unused-vars
+const { smAndUp, mdAndUp } = useDisplay()
+
+// eslint-disable-next-line no-undef
+const form = ref(null)
+
+const submitLogin = () =>{
+    router.push({ name: 'dashboard'})
+}
 </script>
