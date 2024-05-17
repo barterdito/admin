@@ -8,15 +8,15 @@
                 <v-card 
                 class="pa-4 mx-auto my-auto"
                 variant="elevated"
-                :width="344"
+                :width="500"
                 :title="post.title"
                 :subtitle="post.name"
                 >
                 <template v-slot:text>
                     <v-img
-                    :max-width="300"
+                    :max-width="500"
                     aspect-ratio="16/9"
-                    :lazy-src="post.itemImage"
+                    lazy-src="@/assets/gray.jpeg"
                     :src="post.itemImage"
                     >
                         <template v-slot:placeholder>
