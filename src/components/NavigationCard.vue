@@ -19,7 +19,7 @@
 
       <v-navigation-drawer
         v-model="drawer"
-        :location="$vuetify.display.mobile ? 'bottom' : undefined"
+        location="start"
         temporary
       >
         <v-list>
