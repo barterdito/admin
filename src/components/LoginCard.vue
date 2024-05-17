@@ -58,9 +58,9 @@
 
 <script setup>
 import { useDisplay } from 'vuetify'
-import {useRoute} from 'vue-router'
+import {useRouter} from 'vue-router/auto'
 
-const router = useRoute()
+const router = useRouter()
 
 // eslint-disable-next-line no-unused-vars
 const { smAndUp, mdAndUp } = useDisplay()
@@ -69,6 +69,6 @@ const { smAndUp, mdAndUp } = useDisplay()
 const form = ref(null)
 
 const submitLogin = () =>{
-    router.push({ name: 'dashboard'})
+    router.push('/dashboard')
 }
 </script>

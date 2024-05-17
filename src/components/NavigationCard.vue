@@ -13,7 +13,7 @@
         <v-spacer></v-spacer>
 
         <v-btn icon="mdi-bell" variant="text"></v-btn>
-        <v-btn icon="mdi-logout" variant="text" to="/"></v-btn>
+        <v-btn icon="mdi-logout" variant="text" @click.stop="$router.push('/')"></v-btn>
 
       </v-app-bar>
 
@@ -37,7 +37,7 @@
 </template>
 
 <script setup>
-
+// eslint-disable-next-line no-undef
 const drawer = ref(false)
 const itemsNav = [
   {title:'Dashboard',to:'/dashboard',icon:'mdi-view-dashboard'},

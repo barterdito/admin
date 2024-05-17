@@ -10,5 +10,7 @@
 </template>
 
 <script setup>
+// eslint-disable-next-line no-undef
+const showNav = ref(true)
 
 </script>
