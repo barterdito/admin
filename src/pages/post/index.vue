@@ -1,17 +1,53 @@
 <template>
-    <v-row style="height: 100vh;">
-        <v-card class="pa-4 mx-auto my-auto" >
-            <v-card-text>
-                Post
-            </v-card-text>
-        </v-card>
-    </v-row>
+    <v-container>
+        <v-row
+        v-for="(post,index) in postItems" :key="index"
+        class="mx-auto my-auto"
+        >
+            <v-col>
+                <v-card 
+                class="pa-4 mx-auto my-auto"
+                variant="elevated"
+                :width="344"
+                :title="post.title"
+                :subtitle="post.name"
+                >
+                <template v-slot:text>
+                    <v-img
+                    :max-width="300"
+                    aspect-ratio="16/9"
+                    :lazy-src="post.itemImage"
+                    :src="post.itemImage"
+                    >
+                        <template v-slot:placeholder>
+                            <div class="d-flex align-center justify-center fill-height">
+                                <v-progress-circular
+                                color="grey-lighten-4"
+                                indeterminate
+                                ></v-progress-circular>
+                            </div>
+                        </template>
+                    </v-img>
+                    <div>
+                        {{ post.description }}
+                    </div>
+                </template>
+                <template v-slot:append>
+                    <div>{{ post.category }}</div>
+                </template>
+                </v-card>
+            </v-col>
+        </v-row>
+    </v-container>
 </template>
 
 <script setup>
+import {usePostStore} from '@/stores/post.js'
+
+
+const postItems = ref([])
+const usePost = usePostStore()
+
+usePost.getPost().then(value=>{postItems.value = value})
 
 </script>
-
-<style lang="scss" scoped>
-
-</style>
