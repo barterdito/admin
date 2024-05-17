@@ -10,18 +10,5 @@
 </template>
 
 <script setup>
-import NavigationCard from '@/components/NavigationCard.vue';
-import { useRoute } from 'vue-router'
 
-const route = useRoute()
-const showNav = ref(true)
-
-// watch(route, (newRoute) => {
-//   if(newRoute.params.id != null && newRoute.params.id != undefined){
-//     showNav.value = true
-//   }
-//   else{
-//     showNav.value=false
-//   }
-// })
 </script>

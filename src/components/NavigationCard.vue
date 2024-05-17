@@ -4,17 +4,16 @@
         prominent
       >
         <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
-
-        <v-toolbar-title>
-          <v-img src="@/assets/logo.png" width="150"></v-img>
-        </v-toolbar-title>
-
+     
+        <template v-if="$vuetify.display.mdAndUp">
+          <v-toolbar-title>
+            <v-img src="@/assets/logo.png" width="150"></v-img>
+          </v-toolbar-title>
+        </template>
         <v-spacer></v-spacer>
 
-        <template v-if="$vuetify.display.mdAndUp">
-          <v-btn icon="mdi-bell" variant="text"></v-btn>
-          <v-btn icon="mdi-logout" variant="text" to="/"></v-btn>
-        </template>
+        <v-btn icon="mdi-bell" variant="text"></v-btn>
+        <v-btn icon="mdi-logout" variant="text" to="/"></v-btn>
 
       </v-app-bar>
 
@@ -25,12 +24,11 @@
       >
         <v-list>
           <v-list-item
-          v-for="([title,route,icon]) in itemsNav"
-          :key="title"
-          :title="title"
-          :value="title"
-          :prepend-icon="icon"
-          :to="route"
+          v-for="(nav,index) in itemsNav"
+          :key="index"
+          :title="nav.title"
+          :prepend-icon="nav.icon"
+          :to="nav.to"
           >
 
           </v-list-item>
@@ -42,10 +40,10 @@
 
 const drawer = ref(false)
 const itemsNav = [
-  ['Dashboard','dashboard','mdi-view-dashboard'],
-  ['Users','users','mdi-account-group'],
-  ['Post','post','mdi-post'],
-  ['Reports','reports','mdi-chart-box']
+  {title:'Dashboard',to:'/dashboard',icon:'mdi-view-dashboard'},
+  {title:'Users',to:'/users',icon:'mdi-account-group'},
+  {title:'Post',to:'/post',icon:'mdi-post'},
+  {title:'Reports',to:'/reports',icon:'mdi-chart-box'},
 ]
 
 </script>
