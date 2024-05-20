@@ -18,6 +18,7 @@
                     aspect-ratio="16/9"
                     lazy-src="@/assets/gray.jpeg"
                     :src="post.itemImage"
+                    rounded="lg"
                     >
                         <template v-slot:placeholder>
                             <div class="d-flex align-center justify-center fill-height">
@@ -36,8 +37,10 @@
                     <div>{{ post.category }}</div>
                 </template>
                 <template v-slot:actions>
-                    <v-btn>Disable</v-btn>
-                    <v-btn>Delete</v-btn>
+                    <v-btn variant="elevated" rounded="lg">Disable</v-btn>
+                    <v-btn variant="elevated" rounded="lg">Delete</v-btn>
+                    <v-spacer></v-spacer>
+                    <v-divider vertical class="ms-3" inset></v-divider>
                     {{ useDate().format(post.createdAt, 'fullDateTime24h') }}
                 </template>
                 </v-card>
