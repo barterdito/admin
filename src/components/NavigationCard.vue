@@ -2,6 +2,7 @@
       <v-app-bar
         color="primary"
         prominent
+        scroll-behavior="elevated"
       >
         <v-app-bar-nav-icon variant="text" @click.stop="drawer = !drawer"></v-app-bar-nav-icon>
      
