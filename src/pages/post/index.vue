@@ -35,6 +35,11 @@
                 <template v-slot:append>
                     <div>{{ post.category }}</div>
                 </template>
+                <template v-slot:actions>
+                    <v-btn>Disable</v-btn>
+                    <v-btn>Delete</v-btn>
+                    {{ useDate().format(post.createdAt, 'fullDateTime24h') }}
+                </template>
                 </v-card>
             </v-col>
         </v-row>
@@ -43,11 +48,15 @@
 
 <script setup>
 import {usePostStore} from '@/stores/post.js'
+import { useDate } from 'vuetify'
 
 
 const postItems = ref([])
+
 const usePost = usePostStore()
 
-usePost.getPost().then(value=>{postItems.value = value})
+usePost.getPost().then(value=>{
+    postItems.value =value
+})
 
 </script>
