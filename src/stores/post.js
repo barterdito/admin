@@ -2,7 +2,7 @@ import { defineStore } from "pinia";
 //import { ref } from "vue";
 import axios from "axios";
 
-const apiURL = "https://663994011ae792804bec2940.mockapi.io/api/v1/";
+const apiURL = "https://663994011ae792804bec2940.mockapi.io/api/v1/"
 
 const api = axios.create({
     baseURL: apiURL,
