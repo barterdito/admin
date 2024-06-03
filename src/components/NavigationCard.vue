@@ -11,6 +11,11 @@
             <v-img src="@/assets/logo.png" width="150"></v-img>
           </v-toolbar-title>
         </template>
+        <template v-else>
+          <v-toolbar-title>
+            <v-img src="@/assets/logoNoTitle.png" width="30"></v-img>
+          </v-toolbar-title>
+        </template>
         <v-spacer></v-spacer>
 
         <v-btn icon="mdi-bell" variant="text"></v-btn>
